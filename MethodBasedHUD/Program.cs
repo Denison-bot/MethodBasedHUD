@@ -12,13 +12,22 @@ namespace MethodBasedHUD
         static float score;
         static int health;
         static int lives;
-        static void TakeDamage(int damage)
+        static int EnemyDMG = 20;
+        static int multiplier = 1; 
+        static float PTSEarned;
+        static float enemyPTS = 50;
+
+        static void combo()
         {
-            health = health - damage;
+            score = score + enemyPTS * 2;
+        }
+        static void TakeDamage()
+        {
+            health = health - EnemyDMG;
         }
         static void GetKill()
         {
-            score = score + 50;
+            score = score + PTSEarned + enemyPTS;
         }
         static void die()
         {
@@ -80,7 +89,7 @@ namespace MethodBasedHUD
 
             Console.ReadKey();
 
-            TakeDamage(20);
+            TakeDamage();
             ShowHUD();
             Console.ReadKey();
             Console.WriteLine(" ");
@@ -111,8 +120,7 @@ namespace MethodBasedHUD
             Console.ResetColor();
             Console.ReadKey();
 
-            GetKill();
-            GetKill();
+            combo();
 
             Console.WriteLine(" ");
             ShowHUD();
@@ -129,7 +137,7 @@ namespace MethodBasedHUD
             Console.ResetColor();
             Console.ReadKey();
 
-            TakeDamage(70);
+            TakeDamage();
 
             Console.WriteLine(" ");
             ShowHUD();
@@ -147,10 +155,8 @@ namespace MethodBasedHUD
             Console.ResetColor();
             Console.ReadKey();
 
-            GetKill();
-            GetKill();
-            GetKill();
-            GetKill();
+            combo();
+            combo();
 
             Console.WriteLine(" ");
             ShowHUD();
