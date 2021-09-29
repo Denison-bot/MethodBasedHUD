@@ -31,7 +31,7 @@ namespace MethodBasedHUD
         }
         static void die()
         {
-            lives = lives - 1;
+            lives--;
         }
         
         //attempt to add a multiplier 
