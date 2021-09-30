@@ -13,13 +13,13 @@ namespace MethodBasedHUD
         static int health;
         static int lives;
         static int EnemyDMG = 20;
-        static int multiplier = 1; 
+        static float multiplier = 1.5f; 
         static float PTSEarned;
         static float enemyPTS = 50;
 
         static void combo()
         {
-            score = score + enemyPTS * 2;
+            score = score + enemyPTS * multiplier;
         }
         static void TakeDamage()
         {
