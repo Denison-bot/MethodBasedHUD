@@ -13,7 +13,7 @@ namespace MethodBasedHUD
         static int health;
         static int lives;
         static int EnemyDMG = 20;
-        static float multiplier = 1.5f; 
+        static float multiplier = 3f; 
         static float PTSEarned;
         static float enemyPTS = 50;
 
